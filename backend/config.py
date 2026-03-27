@@ -26,8 +26,7 @@ class Settings(BaseSettings):
     # Redis (job queue)
     redis_url: str = "redis://localhost:6379"
 
-    class Config:
-        env_file = "../.env"
+    model_config = {"env_file": "../.env", "extra": "ignore"}
 
 
 settings = Settings()
